@@ -19,10 +19,7 @@ class _RegisterPageState extends State<RegisterPage> {
     String password = _passwordController.text;
 
     if (fullName.isNotEmpty && email.isNotEmpty && password.isNotEmpty) {
-      userData[email] = {
-        'fullName': fullName,
-        'password': password,
-      };
+      userData[email] = {'fullName': fullName, 'password': password};
 
       showDialog(
         context: context,
@@ -146,14 +143,19 @@ class _RegisterPageState extends State<RegisterPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("Already have an account?",
-                        style: TextStyle(color: Colors.white70)),
+                    Text(
+                      "Already have an account?",
+                      style: TextStyle(color: Colors.white70),
+                    ),
                     TextButton(
                       onPressed: () => Navigator.pop(context),
-                      child: Text('Sign In',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold)),
+                      child: Text(
+                        'Sign In',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
                   ],
                 ),
